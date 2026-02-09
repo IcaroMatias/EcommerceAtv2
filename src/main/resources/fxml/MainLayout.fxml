@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -19,6 +18,7 @@
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#abrirClientes" text="Clientes" />
               <MenuItem mnemonicParsing="false" onAction="#abrirProdutos" text="Produtos" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirClientes" text="Nova Venda" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ajuda">
@@ -29,7 +29,4 @@
         </menus>
       </MenuBar>
    </top>
-   <center>
-      <Label text="Tela Inicial" BorderPane.alignment="CENTER" />
-   </center>
 </BorderPane>
