@@ -19,19 +19,29 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Home">
+          <Menu mnemonicParsing="false" onAction="#Home" text="Home">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Cadastro ">
+          <Menu mnemonicParsing="false" onAction="#Cadastro" text="Cadastro ">
             <items>
                   <MenuItem mnemonicParsing="false" text="Produtos" />
               <MenuItem mnemonicParsing="false" text="Clientes" />
                   <MenuItem mnemonicParsing="false" text="Nova Venda" />
+                  <Menu mnemonicParsing="false" text="Relatório">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Venda" />
+                     </items>
+                  </Menu>
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Ajuda">
+            <Menu mnemonicParsing="false" onAction="#Relatorio" text="Relatório">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Venda" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" onAction="#Ajuda" text="Ajuda">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
@@ -51,27 +61,27 @@
             <VBox layoutX="26.0" layoutY="72.0" prefHeight="210.0" prefWidth="185.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
-                  <TextField onAction="#calNomeProd" />
+                  <TextField onAction="#txtNome" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Código:" />
-                  <TextField layoutX="10.0" layoutY="27.0" onAction="#calCodigoProd" />
+                  <TextField layoutX="10.0" layoutY="27.0" onAction="#txtCodigo" />
                   <Text layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preço:" />
                   <TextField layoutX="10.0" layoutY="69.0" onAction="#calPrecoprod" />
                   <Text layoutX="10.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estoque:" />
                   <TextField layoutX="10.0" layoutY="111.0" onAction="#calEstoqueProd" />
                </children>
             </VBox>
-            <TableView fx:id="tabelaProd" layoutX="256.0" layoutY="60.0" prefHeight="196.0" prefWidth="302.0">
+            <TableView fx:id="tabela" layoutX="256.0" layoutY="60.0" prefHeight="196.0" prefWidth="302.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="Nome" />
-                  <TableColumn prefWidth="75.0" text="Código" />
-                  <TableColumn prefWidth="75.0" text="Preço" />
-                  <TableColumn prefWidth="75.0" text="Estoque" />
+                  <TableColumn onEditStart="#calNome" prefWidth="75.0" text="Nome" />
+                  <TableColumn onEditStart="#calCodigo" prefWidth="75.0" text="Código" />
+                  <TableColumn onEditStart="#calPreco" prefWidth="75.0" text="Preço" />
+                  <TableColumn onEditStart="#calEstoque" prefWidth="75.0" text="Estoque" />
                </columns>
             </TableView>
-            <Button layoutX="407.0" layoutY="301.0" mnemonicParsing="false" onAction="#btnSalvarProd" text="Salvar " />
-            <Button layoutX="502.0" layoutY="301.0" mnemonicParsing="false" onAction="#btnLimparProd" text="Limpar " />
+            <Button layoutX="407.0" layoutY="301.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar " />
+            <Button layoutX="502.0" layoutY="301.0" mnemonicParsing="false" onAction="#btnApagar" text="Limpar " />
             <Text layoutX="26.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade:" />
-            <Spinner fx:id="quatidadeProd" layoutX="26.0" layoutY="301.0" />
+            <Spinner fx:id="txxQuantidade" layoutX="26.0" layoutY="301.0" />
          </children>
       </Pane>
    </center>

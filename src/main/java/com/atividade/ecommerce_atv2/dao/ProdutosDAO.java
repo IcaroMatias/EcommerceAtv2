@@ -1,7 +1,6 @@
 package com.atividade.ecommerce_atv2.dao;
 
 import com.atividade.ecommerce_atv2.model.Produto;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +8,8 @@ import java.util.List;
 public class ProdutosDAO {
     private Connection connection;
 
-    public ProdutosDAO {
-        this.connection = new ConnectionFactory().getConnection();
+    public ProdutosDAO() {
+        this.connection = new Conexao().getConnection();
     }
 
     public void salvar(Produto produto) throws SQLException {
