@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="404.0" fitWidth="770.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/F-15-Eagles-fires-flares.jpg" />
+            <Image url="@../imagens/F-15-Eagles-fires-flares.jpg" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="227.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AIR DEFENSE INDUSTRY" textAlignment="CENTER">
@@ -38,15 +38,15 @@
                <children>
                   <Text fill="#eee9e9" layoutX="270.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recuperar Senha" />
                   <Text fill="#eee9e9" layoutX="261.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-                  <TextField layoutX="354.0" layoutY="182.0" />
-                  <TextField layoutX="354.0" layoutY="230.0" />
+                  <TextField layoutX="354.0" layoutY="182.0" onAction="#txtUsuario" />
+                  <TextField layoutX="354.0" layoutY="230.0" onAction="#txtSenha" />
                   <Text fill="#fffbfb" layoutX="331.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
                      <font>
                         <Font name="SansSerif Bold" size="34.0" />
                      </font>
                   </Text>
                   <Text fill="#eee9e9" layoutX="413.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar" />
-                  <Button layoutX="367.0" layoutY="333.0" mnemonicParsing="false" text="Entrar" textOverrun="CENTER_ELLIPSIS" />
+                  <Button layoutX="367.0" layoutY="333.0" mnemonicParsing="false" onAction="#btnLogin" text="Entrar" textOverrun="CENTER_ELLIPSIS" />
                </children>
             </Pane>
          </children>

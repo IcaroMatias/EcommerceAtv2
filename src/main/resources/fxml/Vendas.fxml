@@ -55,28 +55,29 @@
             <VBox layoutX="24.0" layoutY="83.0" prefHeight="210.0" prefWidth="185.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Armamento:" />
-                  <TextField onAction="#calNomeProd" />
+                  <TextField onAction="#txtArmamento" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
-                  <TextField layoutX="10.0" layoutY="27.0" onAction="#calCodigoProd" />
+                  <TextField layoutX="10.0" layoutY="27.0" onAction="#txtCliente" />
                   <Text layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade:" />
-                  <TextField layoutX="10.0" layoutY="69.0" onAction="#calPrecoprod" />
+                  <TextField layoutX="10.0" layoutY="69.0" onAction="#txtQuantidade" />
                   <Text layoutX="10.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Unitário:" />
-                  <TextField layoutX="10.0" layoutY="111.0" onAction="#calEstoqueProd" />
+                  <TextField layoutX="10.0" layoutY="111.0" onAction="#txtValorUnitario" />
                   <Text layoutX="10.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total:" />
-                  <TextField layoutX="10.0" layoutY="151.0" onAction="#calEstoqueProd" />
+                  <TextField layoutX="10.0" layoutY="151.0" onAction="#txtVaorTotal" />
                </children>
             </VBox>
-            <TableView fx:id="tabelaProd" layoutX="228.0" layoutY="90.0" prefHeight="196.0" prefWidth="366.0">
+            <TableView fx:id="tabelaVendas" layoutX="228.0" layoutY="90.0" prefHeight="196.0" prefWidth="366.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="Nome" />
-                  <TableColumn prefWidth="75.0" text="Cliente" />
-                  <TableColumn prefWidth="75.0" text="Quantidade" />
-                  <TableColumn prefWidth="75.0" text="Valor Unit." />
-                  <TableColumn prefWidth="75.0" text="Total" />
+                  <TableColumn onEditStart="#calId" prefWidth="75.0" text="Id" />
+                  <TableColumn onEditStart="#calNome" prefWidth="75.0" text="Nome" />
+                  <TableColumn onEditStart="#calCliente" prefWidth="75.0" text="Cliente" />
+                  <TableColumn onEditStart="#calQuantidade" prefWidth="75.0" text="Quantidade" />
+                  <TableColumn onEditStart="#calValorUnitario" prefWidth="75.0" text="Valor Unit." />
+                  <TableColumn onEditStart="#calTotal" prefWidth="75.0" text="Total" />
                </columns>
             </TableView>
           <Button layoutX="397.0" layoutY="314.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="142.0" text="Adicionar Item" />
-            <Button layoutX="196.0" layoutY="313.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" text="Finalizar" />
+            <Button layoutX="196.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnSalvar" prefHeight="31.0" prefWidth="65.0" text="Salvar" />
          </children>
       </Pane>
    </center>

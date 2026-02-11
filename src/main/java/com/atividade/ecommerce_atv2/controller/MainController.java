@@ -5,6 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 
 public class MainController {
+    @FXML
+    public void initialize(){
+        carregarTela("Home.fxml");
+    }
 
     @FXML
     private BorderPane root;

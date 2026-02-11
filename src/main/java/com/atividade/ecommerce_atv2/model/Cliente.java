@@ -9,7 +9,7 @@ public class Cliente {
     private String endereco;
 
     // Getters e Setters
-    public Cliente() {}
+    public Cliente(String text, String txtCpfText, String txtTelefoneText, String txtEmailText, String txtEnderecoText) {}
     public int getId() { return id;}
     public void setId(int id) { this.id = id;}
     public String getNome() { return nome;}
