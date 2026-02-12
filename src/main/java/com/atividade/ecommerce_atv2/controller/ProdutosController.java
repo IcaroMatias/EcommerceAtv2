@@ -6,25 +6,30 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.sql.SQLException;
 
 public class ProdutosController {
     @FXML private TextField txtNome;
+    @FXML private TextField txtCodigo;
     @FXML private TextField txtPreco;
+    @FXML private TextField txtEstoque;
     @FXML private TableView<Produto> tabelaProdutos;
-    @FXML private TableColumn<Produto,Integer> colId;
-    @FXML private TableColumn<Produto, String> colNome;
-    @FXML private TableColumn<Produto, Double> colPreco;
+    @FXML private TableColumn<Produto,Integer> calId;
+    @FXML private TableColumn<Produto, String> calNome;
+    @FXML private TableColumn<Produto, String> calCodigo;
+    @FXML private TableColumn<Produto, Double> calPreco;
+    @FXML private TableColumn<Produto, Integer> calEstoque;
 
     private ProdutosDAO dao = new ProdutosDAO();
     private Produto produtoSelecionado;
 
     @FXML
     public void  initialize() {
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        calId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        calNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        calCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        calPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        calEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
         atualizarTabela();
     }
 
@@ -38,10 +43,12 @@ public class ProdutosController {
     public void salvarProduto() {
         try {
             if (produtoSelecionado == null) {
-                dao.salvar(new Produto(txtNome.getText(),Double.parseDouble(txtPreco.getText())));
+                dao.salvar(new Produto(txtNome.getText(), txtCodigo.getText(), Double.parseDouble(txtPreco.getText()), Integer.parseInt(txtEstoque.getText())));
             } else {
-                produtoSelecionado.setNome(txtPreco.getText());
+                produtoSelecionado.setNome(txtNome.getText());
+                produtoSelecionado.setCodigo(txtCodigo.getText());
                 produtoSelecionado.setPreco(Double.parseDouble(txtPreco.getText()));
+                produtoSelecionado.setEstoque(Integer.parseInt(txtEstoque.getText()));
                 dao.atualizar(produtoSelecionado);
             }
             atualizarTabela();
@@ -65,7 +72,9 @@ public class ProdutosController {
         produtoSelecionado = tabelaProdutos.getSelectionModel().getSelectedItem();
         if (produtoSelecionado != null) {
             txtNome.setText(produtoSelecionado.getNome());
+            txtCodigo.setText(produtoSelecionado.getCodigo());
             txtPreco.setText(String.valueOf(produtoSelecionado.getPreco()));
+            txtEstoque.setText(String.valueOf(produtoSelecionado.getEstoque()));
         }
     }
 
